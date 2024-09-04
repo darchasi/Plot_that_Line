@@ -601,11 +601,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROJETS\\P-Plot_DateLine\\Code\\Plot_that_line\\Plot_that_line.csproj",
+      "projectUniqueName": "D:\\PROJETS\\P-Plot_That_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
       "projectName": "Plot_that_line",
-      "projectPath": "D:\\PROJETS\\P-Plot_DateLine\\Code\\Plot_that_line\\Plot_that_line.csproj",
+      "projectPath": "D:\\PROJETS\\P-Plot_That_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
       "packagesPath": "C:\\Users\\pv20qck\\.nuget\\packages\\",
-      "outputPath": "D:\\PROJETS\\P-Plot_DateLine\\Code\\Plot_that_line\\obj\\",
+      "outputPath": "D:\\PROJETS\\P-Plot_That_Line\\Code\\Plot_that_line\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

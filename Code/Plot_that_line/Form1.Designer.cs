@@ -30,7 +30,8 @@
         {
             formsPlot1 = new ScottPlot.WinForms.FormsPlot();
             button1 = new Button();
-            button2 = new Button();
+            dateTimePickerStart = new DateTimePicker();
+            dateTimePickerFinal = new DateTimePicker();
             SuspendLayout();
             // 
             // formsPlot1
@@ -44,29 +45,40 @@
             // 
             // button1
             // 
-            button1.Location = new Point(635, 272);
+            button1.Location = new Point(626, 93);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
-            button1.Text = "Exit";
+            button1.Text = "Phantom";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // button2
+            // dateTimePickerStart
             // 
-            button2.Location = new Point(635, 109);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Chart";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            dateTimePickerStart.Location = new Point(707, 198);
+            dateTimePickerStart.Name = "dateTimePickerStart";
+            dateTimePickerStart.Size = new Size(200, 23);
+            dateTimePickerStart.TabIndex = 2;
+            dateTimePickerStart.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // dateTimePickerFinal
+            // 
+            dateTimePickerFinal.Location = new Point(720, 245);
+            dateTimePickerFinal.Name = "dateTimePickerFinal";
+            dateTimePickerFinal.Size = new Size(200, 23);
+            dateTimePickerFinal.TabIndex = 4;
+            dateTimePickerFinal.TabStop = false;
+            dateTimePickerFinal.UseWaitCursor = true;
+            dateTimePickerFinal.ValueChanged += dateTimePickerFinal_ValueChanged;
             // 
             // Form1
             // 
+            AccessibleName = "";
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1349, 654);
-            Controls.Add(button2);
+            Controls.Add(dateTimePickerFinal);
+            Controls.Add(dateTimePickerStart);
             Controls.Add(button1);
             Controls.Add(formsPlot1);
             Name = "Form1";
@@ -78,6 +90,7 @@
 
         private ScottPlot.WinForms.FormsPlot formsPlot1;
         private Button button1;
-        private Button button2;
+        private DateTimePicker dateTimePickerStart;
+        public DateTimePicker dateTimePickerFinal;
     }
 }
