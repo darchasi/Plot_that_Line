@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\csv-reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:csv-reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\csv-reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:csv-reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CSV-Reader.cs",
               "DocumentMoniker": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\CSV-Reader.cs",
               "RelativeDocumentMoniker": "CSV-Reader.cs",
@@ -55,13 +55,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAlwC0AAAAyAAAA",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAAAF4AAAB9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T11:53:52.569Z",
               "EditorCaption": ""
@@ -76,8 +76,7 @@
               "RelativeToolTip": "Crypto.cs",
               "ViewState": "AQIAAAoAAAAAAAAAAAA1wAwAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T11:30:14.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-11T11:30:14.471Z"
             },
             {
               "$type": "Document",
@@ -89,8 +88,7 @@
               "RelativeToolTip": "Date_Picker.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T13:18:07.027Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T13:18:07.027Z"
             },
             {
               "$type": "Document",
@@ -102,8 +100,7 @@
               "RelativeToolTip": "Form1.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAGkAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T13:48:52.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T13:48:52.911Z"
             },
             {
               "$type": "Document",
@@ -115,8 +112,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T13:48:54.959Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T13:48:54.959Z"
             },
             {
               "$type": "Document",

@@ -58,8 +58,13 @@ namespace Plot_that_line
             sr.Close();
             DateTime[] dates = data.Select(d => d.Date).ToArray();
             double[] closePrices = data.Select(d => d.Close).ToArray();
+            double[] volumes = data.Select(d => d.Volume).ToArray();
+            double[] lows = data.Select(d => d.Low).ToArray();
 
             formsPlot1.Plot.Add.Scatter(dates.Select(d => d.ToOADate()).ToArray(), closePrices);
+            //formsPlot1.Plot.Add.Scatter(dates.Select(d => d.ToOADate()).ToArray(), volumes);
+            //formsPlot1.Plot.Add.Scatter(dates.Select(d => d.ToOADate()).ToArray(), lows);
+
             formsPlot1.Refresh();
         }
 
@@ -86,17 +91,46 @@ namespace Plot_that_line
         }
         private void UpdatePlot()
         {
+            formsPlot1.Plot.Clear();
+            FileStream aFile = new FileStream("C:/Users/pv20qck/Desktop/Plot/Plot_that_Line/Info/Fantom.csv", FileMode.Open);
+            StreamReader sr = new StreamReader(aFile);
+
+            var data = new List<Crypto>();
+
+            string line;
+            while ((line = sr.ReadLine()) != null)
+            {
+
+                string[] values = line.Split(',');
+
+                DateTime date = DateTime.Parse(values[0]);
+                double open = double.Parse(values[1]);
+                double high = double.Parse(values[2]);
+                double close = double.Parse(values[3]);
+                double low = double.Parse(values[4]);
+                double volume = double.Parse(values[5]);
+                string currency = values[6];
+
+                data.Add(new Crypto(date, open, high, low, close, volume, currency));
+            }
+            sr.Close();
             DateTime startDate = dateTimePickerStart.Value.Date;
             DateTime finalDate = dateTimePickerFinal.Value.Date;
+            List<DateTime> datesValues = new List<DateTime>();
+            datesValues.Add(startDate);
+            datesValues.Add(finalDate);
 
-            DateTime[] dates = startDate.Select(d => d.Date).ToArray();
-            double[] closePrices = data.Select(d => d.Close).ToArray();
+            DateTime[] dates = data.Select(d => d.Date).ToArray();
+            double[] closePrices = data.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Close).ToArray();
+
+
 
             if (startDate > finalDate)
             {
                 MessageBox.Show("The start date must be before the finish date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            formsPlot1.Plot.Add.Scatter(dates, closePrices);
             formsPlot1.Refresh();
 
         }
