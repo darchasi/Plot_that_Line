@@ -32,6 +32,7 @@
             button1 = new Button();
             dateTimePickerStart = new DateTimePicker();
             dateTimePickerFinal = new DateTimePicker();
+            button2 = new Button();
             SuspendLayout();
             // 
             // formsPlot1
@@ -71,12 +72,23 @@
             dateTimePickerFinal.UseWaitCursor = true;
             dateTimePickerFinal.ValueChanged += dateTimePickerFinal_ValueChanged;
             // 
+            // button2
+            // 
+            button2.Location = new Point(845, 297);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 5;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AccessibleName = "";
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1349, 654);
+            Controls.Add(button2);
             Controls.Add(dateTimePickerFinal);
             Controls.Add(dateTimePickerStart);
             Controls.Add(button1);
@@ -92,5 +104,6 @@
         private Button button1;
         private DateTimePicker dateTimePickerStart;
         public DateTimePicker dateTimePickerFinal;
+        private Button button2;
     }
 }
