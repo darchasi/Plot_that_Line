@@ -1,34 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\",
+  "WorkspaceRootPath": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\maintenant pr\u00EAt\\desktop\\line\\plot_that_line\\code\\plot_that_line\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\csv-reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:csv-reader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\date_picker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:date_picker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\maintenant pr\u00EAt\\desktop\\line\\plot_that_line\\code\\plot_that_line\\crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:crypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\pv20qck\\desktop\\plot\\plot_that_line\\code\\plot_that_line\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\maintenant pr\u00EAt\\desktop\\line\\plot_that_line\\code\\plot_that_line\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|c:\\users\\maintenant pr\u00EAt\\desktop\\line\\plot_that_line\\code\\plot_that_line\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D11D78B8-8570-46CF-96F0-9EF3DDF4A788}|Plot_that_line.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,30 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CSV-Reader.cs",
-              "DocumentMoniker": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\CSV-Reader.cs",
-              "RelativeDocumentMoniker": "CSV-Reader.cs",
-              "ToolTip": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\CSV-Reader.cs",
-              "RelativeToolTip": "CSV-Reader.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T13:23:01.394Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs",
+              "ToolTip": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAAFAAAAAAAAAAAAAAAF4AAAB9AAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAYwBoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T11:53:52.569Z",
               "EditorCaption": ""
@@ -70,57 +49,48 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Crypto.cs",
-              "DocumentMoniker": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Crypto.cs",
+              "DocumentMoniker": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Crypto.cs",
               "RelativeDocumentMoniker": "Crypto.cs",
-              "ToolTip": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Crypto.cs",
+              "ToolTip": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Crypto.cs",
               "RelativeToolTip": "Crypto.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA1wAwAAAAZAAAA",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAqwEIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T11:30:14.471Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Date_Picker.cs",
-              "DocumentMoniker": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Date_Picker.cs",
-              "RelativeDocumentMoniker": "Date_Picker.cs",
-              "ToolTip": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Date_Picker.cs",
-              "RelativeToolTip": "Date_Picker.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T13:18:07.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Form1.Designer.cs",
-              "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGkAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T13:48:52.911Z"
+              "WhenOpened": "2024-09-11T11:30:14.471Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAMAAAA",
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Form1.Designer.cs",
+              "RelativeToolTip": "Form1.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAH4AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T13:48:54.959Z"
+              "WhenOpened": "2024-08-28T13:48:52.911Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T13:48:54.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs [Conception]",
+              "ToolTip": "C:\\Users\\Maintenant pr\u00EAt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Form1.cs [Conception]",
               "RelativeToolTip": "Form1.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-28T13:48:33.549Z",

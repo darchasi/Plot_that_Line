@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Data;
 using ScottPlot;
 using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace Plot_that_line
         readonly FormsPlot FormsPlot1 = new FormsPlot() { Dock = DockStyle.Fill };
         public int fontSize = 18;
         public float lineWidth = 2.0F;
+        public string filePath = "C:\\Users\\pv20qck\\Desktop\\Line\\Plot_that_Line\\Info\\Fantom.csv";
         DateTime[] dates = Generate.ConsecutiveDays(100);
         double[] ys = Generate.RandomWalk(100);
 
@@ -34,37 +36,29 @@ namespace Plot_that_line
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            FileStream aFile = new FileStream("C:/Users/pv20qck/Desktop/Plot/Plot_that_Line/Info/Fantom.csv", FileMode.Open);
-            StreamReader sr = new StreamReader(aFile);
+            CryptoDataReader reader = new CryptoDataReader(filePath);
 
-            var data = new List<Crypto>();
+            List<Crypto> data = reader.LoadData();
 
-            string line;
-            while ((line = sr.ReadLine()) != null)
-            {
-
-                string[] values = line.Split(',');
-
-                DateTime date = DateTime.Parse(values[0]);
-                double open = double.Parse(values[1]);
-                double high = double.Parse(values[2]);
-                double close = double.Parse(values[3]);
-                double low = double.Parse(values[4]);
-                double volume = double.Parse(values[5]);
-                string currency = values[6];
-
-                data.Add(new Crypto(date, open, high, low, close, volume, currency));
-            }
-            sr.Close();
             DateTime[] dates = data.Select(d => d.Date).ToArray();
             double[] closePrices = data.Select(d => d.Close).ToArray();
             double[] volumes = data.Select(d => d.Volume).ToArray();
             double[] lows = data.Select(d => d.Low).ToArray();
 
-            formsPlot1.Plot.Add.Scatter(dates.Select(d => d.ToOADate()).ToArray(), closePrices);
-            //formsPlot1.Plot.Add.Scatter(dates.Select(d => d.ToOADate()).ToArray(), volumes);
-            //formsPlot1.Plot.Add.Scatter(dates.Select(d => d.ToOADate()).ToArray(), lows);
+            double maxVolume = volumes.Max();
+            double maxClose = closePrices.Max();
+            double maxLow = lows.Max();
 
+            double[] normalizedClosePrices = closePrices.Select(x => x / maxClose).ToArray();
+            double[] normalizedVolumes = volumes.Select(x => x / maxVolume).ToArray();
+            double[] normalizedLows = lows.Select(x => x / maxLow).ToArray();
+
+            var Prices = formsPlot1.Plot.Add.ScatterLine(dates.Select(d => d.ToOADate()).ToArray(), normalizedClosePrices);
+            Prices.Color = Colors.Black;
+            var Volumes = formsPlot1.Plot.Add.ScatterLine(dates.Select(d => d.ToOADate()).ToArray(), normalizedVolumes);
+            Volumes.Color = Colors.Aqua;
+            var Low = formsPlot1.Plot.Add.ScatterLine(dates.Select(d => d.ToOADate()).ToArray(), normalizedLows);
+            Low.Color = Colors.Yellow;
             formsPlot1.Refresh();
         }
 
@@ -92,28 +86,11 @@ namespace Plot_that_line
         private void UpdatePlot()
         {
             formsPlot1.Plot.Clear();
-            FileStream aFile = new FileStream("C:/Users/pv20qck/Desktop/Plot/Plot_that_Line/Info/Fantom.csv", FileMode.Open);
-            StreamReader sr = new StreamReader(aFile);
+            
+            CryptoDataReader reader = new CryptoDataReader(filePath);
 
-            var data = new List<Crypto>();
+            List<Crypto> data = reader.LoadData();
 
-            string line;
-            while ((line = sr.ReadLine()) != null)
-            {
-
-                string[] values = line.Split(',');
-
-                DateTime date = DateTime.Parse(values[0]);
-                double open = double.Parse(values[1]);
-                double high = double.Parse(values[2]);
-                double close = double.Parse(values[3]);
-                double low = double.Parse(values[4]);
-                double volume = double.Parse(values[5]);
-                string currency = values[6];
-
-                data.Add(new Crypto(date, open, high, low, close, volume, currency));
-            }
-            sr.Close();
             DateTime startDate = dateTimePickerStart.Value.Date;
             DateTime finalDate = dateTimePickerFinal.Value.Date;
             List<DateTime> datesValues = new List<DateTime>();
@@ -123,13 +100,20 @@ namespace Plot_that_line
             DateTime[] dates = data.Select(d => d.Date).ToArray();
             double[] closePrices = data.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Close).ToArray();
 
-
-
             if (startDate > finalDate)
             {
                 MessageBox.Show("The start date must be before the finish date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            var filteredData = data.Where(d => d.Date >= startDate && d.Date <= finalDate).ToList();
+
+            if (filteredData.Count == 0)
+            {
+                MessageBox.Show("No data available for the selected date range.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             formsPlot1.Plot.Add.Scatter(dates, closePrices);
             formsPlot1.Refresh();
 
@@ -162,6 +146,13 @@ namespace Plot_that_line
             }
 
             UpdatePlot();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            //checkBox2_CheckedChanged.Checked = false;
+            //checkBox2_CheckedChanged.Click += ButtonUpdatePlot_Click;
+
         }
     }
 }
