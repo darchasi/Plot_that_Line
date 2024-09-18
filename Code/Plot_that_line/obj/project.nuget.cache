@@ -1,22 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "/OIkk2o6est6lzfJcx4Cx0D8xLhdQ1AFkahRh5fZ+pQQtx8Td92Qfqs6oeqJ6xoZ8WjBQkL1i2azVwjoY/0E4A==",
+  "dgSpecHash": "zSGBZErIKhGiIoOqf4XqrGR/tMjdDECXsfHTCcmw9FahyFX98LPwTf+Iwcr4Zxn/+6QfTjTXnz0ic9kfEmnSig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Maintenant prêt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
+  "projectFilePath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.9\\microsoft.netcore.platforms.3.1.9.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\opentk\\3.1.0\\opentk.3.1.0.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\opentk.glcontrol\\3.1.0\\opentk.glcontrol.3.1.0.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\scottplot\\5.0.37\\scottplot.5.0.37.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\scottplot.winforms\\5.0.37\\scottplot.winforms.5.0.37.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\skiasharp.nativeassets.linux.nodependencies\\2.88.8\\skiasharp.nativeassets.linux.nodependencies.2.88.8.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\skiasharp.views.desktop.common\\2.88.8\\skiasharp.views.desktop.common.2.88.8.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\skiasharp.views.windowsforms\\2.88.8\\skiasharp.views.windowsforms.2.88.8.nupkg.sha512",
-    "C:\\Users\\Maintenant prêt\\.nuget\\packages\\system.drawing.common\\4.7.3\\system.drawing.common.4.7.3.nupkg.sha512"
+    "C:\\Users\\pv20qck\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.9\\microsoft.netcore.platforms.3.1.9.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\opentk\\3.1.0\\opentk.3.1.0.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\opentk.glcontrol\\3.1.0\\opentk.glcontrol.3.1.0.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\scottplot\\5.0.37\\scottplot.5.0.37.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\scottplot.winforms\\5.0.37\\scottplot.winforms.5.0.37.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\skiasharp.nativeassets.linux.nodependencies\\2.88.8\\skiasharp.nativeassets.linux.nodependencies.2.88.8.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\skiasharp.views.desktop.common\\2.88.8\\skiasharp.views.desktop.common.2.88.8.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\skiasharp.views.windowsforms\\2.88.8\\skiasharp.views.windowsforms.2.88.8.nupkg.sha512",
+    "C:\\Users\\pv20qck\\.nuget\\packages\\system.drawing.common\\4.7.3\\system.drawing.common.4.7.3.nupkg.sha512"
   ],
   "logs": [
     {
