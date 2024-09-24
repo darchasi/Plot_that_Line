@@ -10,7 +10,7 @@ using System.Text;
 using System.IO;
 using ScottPlot.Colormaps;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Plot_that_line
 {
@@ -20,9 +20,9 @@ namespace Plot_that_line
         readonly FormsPlot FormsPlot1 = new FormsPlot() { Dock = DockStyle.Fill };
         public int fontSize = 18;
         public float lineWidth = 2.0F;
-        public string filePathFantom = "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Info\\Fantom.csv";
-        public string filePathCelcius = "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Info\\Celsius.csv";
-        public string filePathBitTorrent = "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Info\\BitTorrent.csv";
+        public string filePathFantom = "..\\..\\..\\..\\..\\Info\\Fantom.csv";
+        public string filePathCelcius = "..\\..\\..\\..\\..\\Info\\Celsius.csv";
+        public string filePathBitTorrent = "..\\..\\..\\..\\..\\Info\\BitTorrent.csv";
         DateTime[] dates = Generate.ConsecutiveDays(100);
         double[] ys = Generate.RandomWalk(100);
 
@@ -56,7 +56,7 @@ namespace Plot_that_line
 
             var Prices = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
             Prices.Color = Colors.Black;
-            Prices.LegendText = "Close";
+            Prices.LegendText = "Fantom";
             var Volumes = formsPlot1.Plot.Add.ScatterLine(datesCelsius, closeCelsius);
             Volumes.LegendText = "Celsius";
             Volumes.Color = Colors.Aqua;
@@ -85,59 +85,56 @@ namespace Plot_that_line
 
         }
 
-        private void UpdatePlot()
+        private void UpdatePlot(DateTime? startDate, DateTime? finalDate)
         {
             formsPlot1.Plot.Clear();
 
             CryptoDataReader readerFantom = new CryptoDataReader(filePathFantom);
             List<Crypto> dataFantom = readerFantom.LoadData();
 
-            CryptoDataReader readerCelcius = new CryptoDataReader(filePathCelcius);
-            List<Crypto> dataCelcius = readerCelcius.LoadData();
+            CryptoDataReader readerCelsius = new CryptoDataReader(filePathCelcius);
+            List<Crypto> dataCelcius = readerCelsius.LoadData();
 
             CryptoDataReader readerBitTorrent = new CryptoDataReader(filePathBitTorrent);
             List<Crypto> dataBitTorrent = readerBitTorrent.LoadData();
 
-            DateTime startDate = dateTimePickerStart.Value.Date;
-            DateTime finalDate = dateTimePickerFinal.Value.Date;
-            List<DateTime> datesValues = new List<DateTime>();
-            datesValues.Add(startDate);
-            datesValues.Add(finalDate);
-
-            DateTime[] datesFantom = dataFantom.Select(d => d.Date).ToArray();
-            double[] closeFantom = dataFantom.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Close).ToArray();
-            DateTime[] datesCelsius = dataCelcius.Select(d => d.Date).ToArray();
-            double[] closeCelsius = dataCelcius.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Close).ToArray();
-            DateTime[] datesBitTorrent = dataBitTorrent.Select(d => d.Date).ToArray();
-            double[] closeBitTorrent = dataBitTorrent.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Close).ToArray();
-
-            if (startDate > finalDate)
+            // Si no se pasan fechas, tomar todas las fechas disponibles
+            if (startDate == null || finalDate == null)
             {
-                MessageBox.Show("The start date must be before the finish date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                startDate = dataFantom.Min(d => d.Date);
+                finalDate = dataFantom.Max(d => d.Date);
             }
 
-            var filteredDataFantom = dataFantom.Where(d => d.Date >= startDate && d.Date <= finalDate).ToList();
+            DateTime[] datesFantom = dataFantom.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Date).ToArray();
+            double[] closeFantom = dataFantom.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Close).ToArray();
 
-            if (filteredDataFantom.Count == 0)
+            DateTime[] datesCelsius = dataCelcius.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Date).ToArray();
+            double[] closeCelsius = dataCelcius.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Close).ToArray();
+
+            DateTime[] datesBitTorrent = dataBitTorrent.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Date).ToArray();
+            double[] closeBitTorrent = dataBitTorrent.Where(d => d.Date >= startDate && d.Date <= finalDate).Select(d => d.Close).ToArray();
+
+            if (datesFantom.Length == 0 || datesCelsius.Length == 0 || datesBitTorrent.Length == 0)
             {
                 MessageBox.Show("No data available for the selected date range.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var Prices = formsPlot1.Plot.Add.ScatterLine(dates, closeFantom);
+            var Prices = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
             Prices.Color = Colors.Black;
             Prices.LegendText = "Fantom";
-            var Volumes = formsPlot1.Plot.Add.ScatterLine(dates, closeCelsius);
+
+            var Volumes = formsPlot1.Plot.Add.ScatterLine(datesCelsius, closeCelsius);
             Volumes.Color = Colors.Aqua;
-            Volumes.LegendText = "Celcius";
-            var Low = formsPlot1.Plot.Add.ScatterLine(dates, closeBitTorrent);
+            Volumes.LegendText = "Celsius";
+
+            var Low = formsPlot1.Plot.Add.ScatterLine(datesBitTorrent, closeBitTorrent);
             Low.Color = Colors.Yellow;
             Low.LegendText = "BitTorrent";
 
             formsPlot1.Refresh();
-
         }
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -156,7 +153,7 @@ namespace Plot_that_line
 
             if (StartDate > FinalDate)
             {
-                MessageBox.Show("The start date have to ve over de finish date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The start date have to be over de finish date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -165,14 +162,25 @@ namespace Plot_that_line
 
             }
 
-            UpdatePlot();
+            UpdatePlot(StartDate, FinalDate);
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            //checkBox2_CheckedChanged.Checked = false;
-            //checkBox2_CheckedChanged.Click += ButtonUpdatePlot_Click;
+            CryptoDataReader readerFantom = new CryptoDataReader(filePathFantom);
+            List<Crypto> dataFantom = readerFantom.LoadData();
 
+            DateTime lastDate = dataFantom.Max(d => d.Date);
+            DateTime oneYearAgo = lastDate.AddYears(-1);
+
+            if (LastYear.Checked)
+            {
+                UpdatePlot(oneYearAgo, lastDate);
+            }
+            else
+            {
+                UpdatePlot(null, null);
+            }
         }
     }
 }
