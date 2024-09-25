@@ -16,72 +16,30 @@ namespace Plot_that_line
 {
     public partial class Form1 : Form
     {
-
-        readonly FormsPlot FormsPlot1 = new FormsPlot() { Dock = DockStyle.Fill };
-        public int fontSize = 18;
-        public float lineWidth = 2.0F;
         public string filePathFantom = "..\\..\\..\\..\\..\\Info\\Fantom.csv";
-        public string filePathCelcius = "..\\..\\..\\..\\..\\Info\\Celsius.csv";
+        public string filePathCelsius = "..\\..\\..\\..\\..\\Info\\Celsius.csv";
         public string filePathBitTorrent = "..\\..\\..\\..\\..\\Info\\BitTorrent.csv";
-        DateTime[] dates = Generate.ConsecutiveDays(100);
-        double[] ys = Generate.RandomWalk(100);
-
 
         public Form1()
         {
             InitializeComponent();
             formsPlot1.Plot.Axes.DateTimeTicksBottom();
             this.Controls.Add(formsPlot1);
-
             this.Load += Form1_Load;
+            Fantom.Checked=true;
+            Celsius.Checked = true;
+            BitTorrent.Checked = true;
+            formsPlot1.Plot.ShowLegend(Edge.Right);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CryptoDataReader readerFantom = new CryptoDataReader(filePathFantom);
-            List<Crypto> dataFantom = readerFantom.LoadData();
 
-            CryptoDataReader readerCelsius = new CryptoDataReader(filePathCelcius);
-            List<Crypto> dataCelsius = readerCelsius.LoadData();
-
-            CryptoDataReader readerBitTorrent = new CryptoDataReader(filePathBitTorrent);
-            List<Crypto> dataBitTorrent = readerBitTorrent.LoadData();
-
-            DateTime[] datesFantom = dataFantom.Select(d => d.Date).ToArray();
-            double[] closeFantom = dataFantom.Select(d => d.Close).ToArray();
-            DateTime[] datesCelsius = dataCelsius.Select(d => d.Date).ToArray();
-            double[] closeCelsius = dataCelsius.Select(d => d.Close).ToArray();
-            DateTime[] datesBitTorren = dataBitTorrent.Select(d => d.Date).ToArray();
-            double[] closeBitTorrent = dataBitTorrent.Select(d => d.Close).ToArray();
-
-            var Prices = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
-            Prices.Color = Colors.Black;
-            Prices.LegendText = "Fantom";
-            var Volumes = formsPlot1.Plot.Add.ScatterLine(datesCelsius, closeCelsius);
-            Volumes.LegendText = "Celsius";
-            Volumes.Color = Colors.Aqua;
-            var Low = formsPlot1.Plot.Add.ScatterLine(datesBitTorren, closeBitTorrent);
-            Low.Color = Colors.Yellow;
-            Low.LegendText = "BitTorrent";
-
-            Currency currencyFantom = dataFantom.First().Currency; 
-            Currency currencyCelsius = dataCelsius.First().Currency; 
-            Currency currencyBitTorrent = dataBitTorrent.First().Currency; 
-
-   
-            formsPlot1.Plot.YLabel(currencyFantom.ToString());
-            formsPlot1.Plot.ShowLegend(Edge.Right);
-            formsPlot1.Refresh();
         }
 
         private void formsPlot1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
 
         }
 
@@ -92,13 +50,12 @@ namespace Plot_that_line
             CryptoDataReader readerFantom = new CryptoDataReader(filePathFantom);
             List<Crypto> dataFantom = readerFantom.LoadData();
 
-            CryptoDataReader readerCelsius = new CryptoDataReader(filePathCelcius);
+            CryptoDataReader readerCelsius = new CryptoDataReader(filePathCelsius);
             List<Crypto> dataCelcius = readerCelsius.LoadData();
 
             CryptoDataReader readerBitTorrent = new CryptoDataReader(filePathBitTorrent);
             List<Crypto> dataBitTorrent = readerBitTorrent.LoadData();
 
-            // Si no se pasan fechas, tomar todas las fechas disponibles
             if (startDate == null || finalDate == null)
             {
                 startDate = dataFantom.Min(d => d.Date);
@@ -120,17 +77,17 @@ namespace Plot_that_line
                 return;
             }
 
-            var Prices = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
-            Prices.Color = Colors.Black;
-            Prices.LegendText = "Fantom";
+            var Fantom = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
+            Fantom.Color = Colors.Black;
+            Fantom.LegendText = "Fantom";
 
-            var Volumes = formsPlot1.Plot.Add.ScatterLine(datesCelsius, closeCelsius);
-            Volumes.Color = Colors.Aqua;
-            Volumes.LegendText = "Celsius";
+            var Celsius = formsPlot1.Plot.Add.ScatterLine(datesCelsius, closeCelsius);
+            Celsius.Color = Colors.Aqua;
+            Celsius.LegendText = "Celsius";
 
-            var Low = formsPlot1.Plot.Add.ScatterLine(datesBitTorrent, closeBitTorrent);
-            Low.Color = Colors.Yellow;
-            Low.LegendText = "BitTorrent";
+            var BitTorrent = formsPlot1.Plot.Add.ScatterLine(datesBitTorrent, closeBitTorrent);
+            BitTorrent.Color = Colors.Yellow;
+            BitTorrent.LegendText = "BitTorrent";
 
             formsPlot1.Refresh();
         }
@@ -176,6 +133,125 @@ namespace Plot_that_line
             if (LastYear.Checked)
             {
                 UpdatePlot(oneYearAgo, lastDate);
+                LastMonth.Checked = false;
+                LastWeek.Checked = false;
+            }
+            else
+            {
+                UpdatePlot(null, null);
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            CryptoDataReader readerFantom = new CryptoDataReader(filePathFantom);
+            List<Crypto> dataFantom = readerFantom.LoadData();
+
+            DateTime lastDate = dataFantom.Max(d => d.Date);
+            DateTime oneYearAgo = lastDate.AddMonths(-1);
+
+            if (LastMonth.Checked)
+            {
+                UpdatePlot(oneYearAgo, lastDate);
+                LastYear.Checked = false;
+                LastWeek.Checked = false;
+            }
+            else
+            {
+                UpdatePlot(null, null);
+            }
+        }
+
+        private void LastDay_CheckedChanged(object sender, EventArgs e)
+        {
+            CryptoDataReader readerFantom = new CryptoDataReader(filePathFantom);
+            List<Crypto> dataFantom = readerFantom.LoadData();
+
+            DateTime lastDate = dataFantom.Max(d => d.Date);
+            DateTime oneweekAgo = lastDate.AddDays(-7);
+
+            if (LastWeek.Checked)
+            {
+                UpdatePlot(oneweekAgo, lastDate);
+                LastYear.Checked = false;
+                LastMonth.Checked = false;
+            }
+            else
+            {
+                UpdatePlot(null, null);
+            }
+        }
+
+        private void Fantom_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Fantom.Checked)
+            {
+                CryptoDataReader readerFantom = new CryptoDataReader(filePathFantom);
+                List<Crypto> dataFantom = readerFantom.LoadData();
+
+                DateTime[] datesFantom = dataFantom.Select(d => d.Date).ToArray();
+                double[] closeFantom = dataFantom.Select(d => d.Close).ToArray();
+
+                var Fantom = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
+                Fantom.Color = Colors.Black;
+                Fantom.LegendText = "Fantom";
+
+                Currency currencyFantom = dataFantom.First().Currency;
+
+                formsPlot1.Plot.YLabel(currencyFantom.ToString());
+            }
+            else
+            {
+                UpdatePlot(null, null);
+            }
+        }
+
+        private void Celsius_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Celsius.Checked)
+            {
+                CryptoDataReader readerCelsius = new CryptoDataReader(filePathCelsius);
+                List<Crypto> dataCelsius = readerCelsius.LoadData();
+
+                DateTime[] datesCelsius = dataCelsius.Select(d => d.Date).ToArray();
+                double[] closeCelsius = dataCelsius.Select(d => d.Close).ToArray();
+
+                var Celsius = formsPlot1.Plot.Add.ScatterLine(datesCelsius, closeCelsius);
+                Celsius.LegendText = "Celsius";
+                Celsius.Color = Colors.Aqua;
+
+                Currency currencyCelsius = dataCelsius.First().Currency;
+
+                formsPlot1.Plot.YLabel(currencyCelsius.ToString());
+            }
+            else
+            {
+                CryptoDataReader readerCelsius = new CryptoDataReader(filePathCelsius);
+                List<Crypto> dataCelsius = readerCelsius.LoadData();
+
+                DateTime[] datesCelsius = dataCelsius.Select(d => d.Date).ToArray();
+                double[] closeCelsius = dataCelsius.Select(d => d.Close).ToArray();
+                var Celsius = formsPlot1.Plot.Remove.ScatterLine(datesCelsius, closeCelsius);
+            }
+        }
+
+        private void BitTorrent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (BitTorrent.Checked)
+            {
+                CryptoDataReader readerBitTorrent = new CryptoDataReader(filePathBitTorrent);
+                List<Crypto> dataBitTorrent = readerBitTorrent.LoadData();
+
+                DateTime[] datesBitTorrent = dataBitTorrent.Select(d => d.Date).ToArray();
+                double[] closeBitTorrent = dataBitTorrent.Select(d => d.Close).ToArray();
+
+                var Low = formsPlot1.Plot.Add.ScatterLine(datesBitTorrent, closeBitTorrent);
+                Low.Color = Colors.Yellow;
+                Low.LegendText = "BitTorrent";
+
+                Currency currencyBitTorrent = dataBitTorrent.First().Currency;
+
+                formsPlot1.Plot.YLabel(currencyBitTorrent.ToString());
             }
             else
             {

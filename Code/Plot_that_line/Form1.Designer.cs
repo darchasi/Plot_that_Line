@@ -29,49 +29,39 @@
         private void InitializeComponent()
         {
             formsPlot1 = new ScottPlot.WinForms.FormsPlot();
-            button1 = new Button();
             dateTimePickerStart = new DateTimePicker();
             dateTimePickerFinal = new DateTimePicker();
             button2 = new Button();
             LastYear = new CheckBox();
+            LastMonth = new CheckBox();
+            LastWeek = new CheckBox();
+            Fantom = new CheckBox();
+            Celsius = new CheckBox();
+            BitTorrent = new CheckBox();
             SuspendLayout();
             // 
             // formsPlot1
             // 
             formsPlot1.DisplayScale = 1F;
-            formsPlot1.Location = new Point(14, 91);
-            formsPlot1.Margin = new Padding(3, 4, 3, 4);
+            formsPlot1.Location = new Point(12, 68);
             formsPlot1.Name = "formsPlot1";
-            formsPlot1.Size = new Size(658, 348);
+            formsPlot1.Size = new Size(576, 261);
             formsPlot1.TabIndex = 0;
             formsPlot1.Load += formsPlot1_Load;
             // 
-            // button1
-            // 
-            button1.Location = new Point(715, 124);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(86, 31);
-            button1.TabIndex = 1;
-            button1.Text = "Phantom";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // dateTimePickerStart
             // 
-            dateTimePickerStart.Location = new Point(808, 264);
-            dateTimePickerStart.Margin = new Padding(3, 4, 3, 4);
+            dateTimePickerStart.Location = new Point(28, 335);
             dateTimePickerStart.Name = "dateTimePickerStart";
-            dateTimePickerStart.Size = new Size(228, 27);
+            dateTimePickerStart.Size = new Size(200, 23);
             dateTimePickerStart.TabIndex = 2;
             dateTimePickerStart.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // dateTimePickerFinal
             // 
-            dateTimePickerFinal.Location = new Point(823, 327);
-            dateTimePickerFinal.Margin = new Padding(3, 4, 3, 4);
+            dateTimePickerFinal.Location = new Point(251, 335);
             dateTimePickerFinal.Name = "dateTimePickerFinal";
-            dateTimePickerFinal.Size = new Size(228, 27);
+            dateTimePickerFinal.Size = new Size(200, 23);
             dateTimePickerFinal.TabIndex = 4;
             dateTimePickerFinal.TabStop = false;
             dateTimePickerFinal.UseWaitCursor = true;
@@ -79,12 +69,11 @@
             // 
             // button2
             // 
-            button2.Location = new Point(966, 396);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(492, 335);
             button2.Name = "button2";
-            button2.Size = new Size(86, 31);
+            button2.Size = new Size(75, 23);
             button2.TabIndex = 5;
-            button2.Text = "button2";
+            button2.Text = "Confirm";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -92,27 +81,86 @@
             // 
             LastYear.AccessibleName = "LastYear";
             LastYear.AutoSize = true;
-            LastYear.Location = new Point(868, 91);
+            LastYear.Location = new Point(609, 92);
+            LastYear.Margin = new Padding(3, 2, 3, 2);
             LastYear.Name = "LastYear";
-            LastYear.Size = new Size(85, 24);
+            LastYear.Size = new Size(69, 19);
             LastYear.TabIndex = 7;
             LastYear.Text = "LastYear";
             LastYear.UseVisualStyleBackColor = true;
             LastYear.CheckedChanged += checkBox2_CheckedChanged;
             // 
+            // LastMonth
+            // 
+            LastMonth.AutoSize = true;
+            LastMonth.Location = new Point(608, 132);
+            LastMonth.Name = "LastMonth";
+            LastMonth.Size = new Size(83, 19);
+            LastMonth.TabIndex = 8;
+            LastMonth.Text = "LastMonth";
+            LastMonth.UseVisualStyleBackColor = true;
+            LastMonth.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // LastWeek
+            // 
+            LastWeek.AutoSize = true;
+            LastWeek.Location = new Point(608, 173);
+            LastWeek.Name = "LastWeek";
+            LastWeek.Size = new Size(76, 19);
+            LastWeek.TabIndex = 9;
+            LastWeek.Text = "LastWeek";
+            LastWeek.UseVisualStyleBackColor = true;
+            LastWeek.CheckedChanged += LastDay_CheckedChanged;
+            // 
+            // Fantom
+            // 
+            Fantom.AutoSize = true;
+            Fantom.Location = new Point(741, 92);
+            Fantom.Name = "Fantom";
+            Fantom.Size = new Size(67, 19);
+            Fantom.TabIndex = 10;
+            Fantom.Text = "Fantom";
+            Fantom.UseVisualStyleBackColor = true;
+            Fantom.CheckedChanged += Fantom_CheckedChanged;
+            // 
+            // Celsius
+            // 
+            Celsius.AutoSize = true;
+            Celsius.Location = new Point(741, 132);
+            Celsius.Name = "Celsius";
+            Celsius.Size = new Size(63, 19);
+            Celsius.TabIndex = 11;
+            Celsius.Text = "Celsius";
+            Celsius.UseVisualStyleBackColor = true;
+            Celsius.CheckedChanged += Celsius_CheckedChanged;
+            // 
+            // BitTorrent
+            // 
+            BitTorrent.AutoSize = true;
+            BitTorrent.Location = new Point(741, 173);
+            BitTorrent.Name = "BitTorrent";
+            BitTorrent.Size = new Size(77, 19);
+            BitTorrent.TabIndex = 12;
+            BitTorrent.Text = "BitTorrent";
+            BitTorrent.UseVisualStyleBackColor = true;
+            BitTorrent.CheckedChanged += BitTorrent_CheckedChanged;
+            // 
             // Form1
             // 
             AccessibleName = "";
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1542, 872);
+            ClientSize = new Size(1349, 654);
+            Controls.Add(BitTorrent);
+            Controls.Add(Celsius);
+            Controls.Add(Fantom);
+            Controls.Add(LastWeek);
+            Controls.Add(LastMonth);
             Controls.Add(LastYear);
             Controls.Add(button2);
             Controls.Add(dateTimePickerFinal);
             Controls.Add(dateTimePickerStart);
-            Controls.Add(button1);
             Controls.Add(formsPlot1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -122,11 +170,14 @@
         #endregion
 
         private ScottPlot.WinForms.FormsPlot formsPlot1;
-        private Button button1;
         private DateTimePicker dateTimePickerStart;
         public DateTimePicker dateTimePickerFinal;
         private Button button2;
         private CheckBox LastYear;
-
+        private CheckBox LastMonth;
+        private CheckBox LastWeek;
+        private CheckBox Fantom;
+        private CheckBox Celsius;
+        private CheckBox BitTorrent;
     }
 }

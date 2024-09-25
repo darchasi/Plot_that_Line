@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maintenant prêt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj": {}
+    "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maintenant prêt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj": {
+    "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maintenant prêt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
+        "projectUniqueName": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
         "projectName": "Plot_that_line",
-        "projectPath": "C:\\Users\\Maintenant prêt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
-        "packagesPath": "C:\\Users\\Maintenant prêt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maintenant prêt\\Desktop\\Line\\Plot_that_Line\\Code\\Plot_that_line\\obj\\",
+        "projectPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
+        "packagesPath": "C:\\Users\\pv20qck\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Maintenant prêt\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pv20qck\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -78,7 +79,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
