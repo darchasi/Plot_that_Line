@@ -134,3 +134,37 @@ C:\Users\Maintenant prêt\Desktop\Line\Plot_that_Line\Code\Plot_that_line\obj\De
 C:\Users\Maintenant prêt\Desktop\Line\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.pdb
 C:\Users\Maintenant prêt\Desktop\Line\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.genruntimeconfig.cache
 C:\Users\Maintenant prêt\Desktop\Line\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\ref\Plot_that_line.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.csproj.AssemblyReference.cache
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.Form1.resources
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.csproj.GenerateResource.cache
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.AssemblyInfoInputs.cache
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.AssemblyInfo.cs
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.csproj.CoreCompileInputs.cache
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.sourcelink.json
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\refint\Plot_that_line.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.pdb
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\Plot_that_line.exe
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\Plot_that_line.deps.json
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\Plot_that_line.runtimeconfig.json
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\Plot_that_line.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\Plot_that_line.pdb
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\OpenTK.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\OpenTK.GLControl.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\ScottPlot.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\ScottPlot.WinForms.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\SkiaSharp.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\SkiaSharp.Views.WindowsForms.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSkiaSharp.so
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSkiaSharp.so
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSkiaSharp.so
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSkiaSharp.so
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_tha.5B61E18E.Up2Date
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\Plot_that_line.genruntimeconfig.cache
+C:\Users\dehad\Desktop\Dario\Plot\Plot_that_Line\Code\Plot_that_line\obj\Debug\net8.0-windows\ref\Plot_that_line.dll

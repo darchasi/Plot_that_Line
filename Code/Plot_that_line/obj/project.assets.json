@@ -594,25 +594,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pv20qck\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\dehad\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
+      "projectUniqueName": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
       "projectName": "Plot_that_line",
-      "projectPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
-      "packagesPath": "C:\\Users\\pv20qck\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\obj\\",
+      "projectPath": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
+      "packagesPath": "C:\\Users\\dehad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\pv20qck\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dehad\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -621,7 +619,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

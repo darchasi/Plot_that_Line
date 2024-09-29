@@ -17,17 +17,20 @@ namespace Plot_that_line
 
     public class Crypto
     {
-        public Crypto(List<DateTime> date, List<float> open, List<float> high, List<float> low, List<float> close, List<float> volume, List<float> currency)
+        public Crypto(string cryptoName, List<DateTime> date, List<float> open, List<float> high, List<float> low, List<float> close, List<float> volume, List<string> currency)
         {
-            Date = date; 
+            CryptoName = cryptoName;
+            Date = date;
             Open = open;
             High = high;
             Low = low;
             Close = close;
             Volume = volume;
-            Currency = CurrencyConverter.fromString(currency);
+
+            Currency = currency.Select(CurrencyConverter.fromString).ToList();
         }
 
+        public string CryptoName { get; set; }
         public List<DateTime> Date { get; set; }
         public List<float> Open { get; set; }
         public List<float> High { get; set; }
@@ -39,21 +42,29 @@ namespace Plot_that_line
 }
 public enum Currency
 {
-    USD
+    USD, // Dolar
+    EUR, // Euro
+    GBP, // Pound sterling
+    JPY, // Yen
+    CAD  // Canadian dolars
 }
 
 static class CurrencyConverter
 {
     public static Currency fromString(string currency)
     {
-        switch (currency)
+        switch (currency.ToUpper())
         {
             case "USD": return Currency.USD;
-
-            default: return Currency.USD;
+            case "EUR": return Currency.EUR;
+            case "GBP": return Currency.GBP;
+            case "JPY": return Currency.JPY;
+            case "CAD": return Currency.CAD;
+            default: throw new ArgumentException($"Unknow currency: {currency}");
         }
     }
 }
+
 
 public class CryptoDataReader
 {
@@ -61,11 +72,25 @@ public class CryptoDataReader
 
     public List<Crypto> LoadData()
     {
+        var data = new List<Crypto>();
+        //Check file existence
         if (Directory.Exists(sourceDirectory))
         {
             string[] paths = Directory.GetFiles(sourceDirectory);
-            foreach (string csv in paths) {
-                var data = new List<Crypto>();
+
+            foreach (string csv in paths)
+            {
+                //File name use to give a name to thr crypto
+                string cryptoName = Path.GetFileNameWithoutExtension(csv);
+
+                // List to stock valors in each column
+                List<DateTime> dates = new List<DateTime>();
+                List<float> opens = new List<float>();
+                List<float> highs = new List<float>();
+                List<float> lows = new List<float>();
+                List<float> closes = new List<float>();
+                List<float> volumes = new List<float>();
+                List<string> currencies = new List<string>();
 
                 using (FileStream aFile = new FileStream(csv, FileMode.Open))
                 using (StreamReader sr = new StreamReader(aFile))
@@ -75,23 +100,26 @@ public class CryptoDataReader
                     {
                         string[] values = line.Split(',');
 
-                        DateTime date = DateTime.Parse(values[0]);
-                        float open = float.Parse(values[1], CultureInfo.InvariantCulture);
-                        float high = float.Parse(values[2], CultureInfo.InvariantCulture);
-                        float close = float.Parse(values[3], CultureInfo.InvariantCulture);
-                        float low = float.Parse(values[4], CultureInfo.InvariantCulture);
-                        float volume = float.Parse(values[5], CultureInfo.InvariantCulture);
-                        string currency = values[6];
+                        // Add valors to the list
+                        dates.Add(DateTime.Parse(values[0]));
+                        opens.Add(float.Parse(values[1], CultureInfo.InvariantCulture));
+                        highs.Add(float.Parse(values[2], CultureInfo.InvariantCulture));
+                        closes.Add(float.Parse(values[3], CultureInfo.InvariantCulture));
+                        lows.Add(float.Parse(values[4], CultureInfo.InvariantCulture));
+                        volumes.Add(float.Parse(values[5], CultureInfo.InvariantCulture));
+                        currencies.Add(values[6]);
                     }
-                   
                 }
-                data.Add(new Crypto(date, open, high, low, close, volume, currency));
+
+                // Create instance and add to "add"
+                data.Add(new Crypto(cryptoName, dates, opens, highs, lows, closes, volumes, currencies));
             }
-            return data;
         }
         else
         {
-            MessageBox.Show("{0} is not a valid directory.");
+            MessageBox.Show($"{sourceDirectory} is not a valid directory.");
         }
+
+        return data;
     }
 }
