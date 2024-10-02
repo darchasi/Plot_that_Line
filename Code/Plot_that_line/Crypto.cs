@@ -1,15 +1,6 @@
-﻿using Microsoft.VisualBasic.Logging;
-using Plot_that_line;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using Plot_that_line;
 using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
+
 
 namespace Plot_that_line 
 {

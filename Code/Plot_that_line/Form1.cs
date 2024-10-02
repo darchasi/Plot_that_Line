@@ -1,24 +1,16 @@
-using ScottPlot.WinForms;
-using System.Windows.Forms;
 using System.Data;
 using ScottPlot;
-using System;
-using System.Globalization;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using ScottPlot.Colormaps;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+
 
 namespace Plot_that_line
 {
     public partial class Form1 : Form
     {
+        //Get data Cryptos
         public static CryptoDataReader reader = new CryptoDataReader();
         List<Crypto> allCryptoData = reader.LoadData();
 
+        //Cryptos used
         public static string cryptoNameFantom = "Fantom";
         public static string cryptoNameCelsius = "Celsius";
         public static string cryptoNameBitTorrent = "BitTorrent";
@@ -26,12 +18,16 @@ namespace Plot_that_line
         public Form1()
         {
             InitializeComponent();
+            //Plot initiated
             formsPlot1.Plot.Axes.DateTimeTicksBottom();
             this.Controls.Add(formsPlot1);
-            this.Load += Form1_Load;
+
+            //Activation default Cryptos check
             Fantom.Checked=true;
             Celsius.Checked = true;
             BitTorrent.Checked = true;
+
+            //Legend placement
             formsPlot1.Plot.ShowLegend(Edge.Right);
 
         }
@@ -49,39 +45,61 @@ namespace Plot_that_line
         private void UpdatePlot(DateTime? startDate, DateTime? finalDate)
         {
             formsPlot1.Plot.Clear();
-
+            //If no chosen dates, it takes all the dates
             if (startDate == null || finalDate == null)
             {
                 startDate = allCryptoData.Min(d => d.Date.Min());
                 finalDate = allCryptoData.Max(d => d.Date.Max());
             }
+            //if fantom checked it draws it
+            if (this.Fantom.Checked) {
+                //Get dates range
+                DateTime[] datesFantom = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).SelectMany(c => c.Date).Where(date => date >= startDate && date <= finalDate).ToArray();
+                //Get close price of crypto
+                float[] closeFantom = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).SelectMany(crypto => crypto.Close).Where((_, index) => index < datesFantom.Length).ToArray();
 
-            DateTime[] datesFantom = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).SelectMany(c => c.Date).Where(date => date >= startDate && date <= finalDate).ToArray();
-            float[] closeFantom = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).SelectMany(crypto => crypto.Close).Where((_, index) => index < datesFantom.Length).ToArray();
-
-            DateTime[] datesCelsius = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameCelsius).SelectMany(c => c.Date).Where(date => date >= startDate && date <= finalDate).ToArray();
-            float[] closeCelsius = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameCelsius).SelectMany(crypto => crypto.Close).Where((_, index) => index < datesCelsius.Length).ToArray();
-
-            DateTime[] datesBitTorrent = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameBitTorrent).SelectMany(c => c.Date).Where(date => date >= startDate && date <= finalDate).ToArray();
-            float[] closeBitTorrent = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameBitTorrent).SelectMany(crypto => crypto.Close).Where((_, index) => index < datesBitTorrent.Length).ToArray();
-
-            if (datesFantom.Length == 0 || datesCelsius.Length == 0 || datesBitTorrent.Length == 0)
-            {
-                MessageBox.Show("No data available for the selected date range.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                //if chosen data is out range, the user will have an error message 
+                if (datesFantom.Length == 0)
+                {
+                    MessageBox.Show("No data available for the selected date range.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                //Scottplot line design
+                ScottPlot.Plottables.Scatter Fantom = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
+                Fantom.Color = Colors.Black;
+                Fantom.LegendText = cryptoNameFantom;
             }
+            //if Celsius checked it draws it
+            if (this.Celsius.Checked) {
+                DateTime[] datesCelsius = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameCelsius).SelectMany(c => c.Date).Where(date => date >= startDate && date <= finalDate).ToArray();
+                float[] closeCelsius = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameCelsius).SelectMany(crypto => crypto.Close).Where((_, index) => index < datesCelsius.Length).ToArray();
 
-            var Fantom = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
-            Fantom.Color = Colors.Black;
-            Fantom.LegendText = "Fantom";
+                if ( datesCelsius.Length == 0)
+                {
+                    MessageBox.Show("No data available for the selected date range.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            var Celsius = formsPlot1.Plot.Add.ScatterLine(datesCelsius, closeCelsius);
-            Celsius.Color = Colors.Aqua;
-            Celsius.LegendText = "Celsius";
+                ScottPlot.Plottables.Scatter Celsius = formsPlot1.Plot.Add.ScatterLine(datesCelsius, closeCelsius);
+                Celsius.Color = Colors.Aqua;
+                Celsius.LegendText = cryptoNameCelsius;
 
-            var BitTorrent = formsPlot1.Plot.Add.ScatterLine(datesBitTorrent, closeBitTorrent);
-            BitTorrent.Color = Colors.Yellow;
-            BitTorrent.LegendText = "BitTorrent";
+            }
+            //if BitTorrent checked it draws it
+            if (this.BitTorrent.Checked)
+            {
+                DateTime[] datesBitTorrent = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameBitTorrent).SelectMany(c => c.Date).Where(date => date >= startDate && date <= finalDate).ToArray();
+                float[] closeBitTorrent = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameBitTorrent).SelectMany(crypto => crypto.Close).Where((_, index) => index < datesBitTorrent.Length).ToArray();
+
+                if ( datesBitTorrent.Length == 0)
+                {
+                    MessageBox.Show("No data available for the selected date range.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                ScottPlot.Plottables.Scatter BitTorrent = formsPlot1.Plot.Add.ScatterLine(datesBitTorrent, closeBitTorrent);
+                BitTorrent.Color = Colors.Yellow;
+                BitTorrent.LegendText = cryptoNameBitTorrent;
+            }
 
             formsPlot1.Refresh();
         }
@@ -102,6 +120,7 @@ namespace Plot_that_line
             DateTime StartDate = dateTimePickerStart.Value.Date;
             DateTime FinalDate = dateTimePickerFinal.Value.Date;
 
+            //If StartDate isn't bigger than the FinalDat, then it will show an information message
             if (StartDate > FinalDate)
             {
                 MessageBox.Show("The start date have to be over de finish date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -169,86 +188,23 @@ namespace Plot_that_line
             }
         }
 
-        private void Fantom_CheckedChanged(object sender, EventArgs e)
+        public void Fantom_CheckedChanged(object sender, EventArgs e)
         {
-            if (Fantom.Checked)
-            {
-                DateTime startDate = allCryptoData.Min(d => d.Date.Min());
-                DateTime finalDate = allCryptoData.Max(d => d.Date.Max());
-
-                DateTime[] datesFantom = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).SelectMany(c => c.Date).Where(date => date >= startDate && date <= finalDate).ToArray();
-                float[] closeFantom = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).SelectMany(crypto => crypto.Close).Where((_, index) => index < datesFantom.Length).ToArray();
-
-                var Fantom = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
-                Fantom.Color = Colors.Black;
-                Fantom.LegendText = "Fantom";
-
-                Currency currencyFantom = allCryptoData.First(crypto => crypto.CryptoName == cryptoNameFantom).Currency.First();
-
-                formsPlot1.Plot.YLabel(currencyFantom.ToString());
-            }
-            else
-            {
-                UpdatePlot(null, null);
-            }
+            UpdatePlot(null, null);
         }
 
         private void Celsius_CheckedChanged(object sender, EventArgs e)
         {
-            if (Celsius.Checked)
-            {
-
-                DateTime startDate = allCryptoData.Min(d => d.Date.Min());
-                DateTime finalDate = allCryptoData.Max(d => d.Date.Max());
-
-                DateTime[] datesCelsius = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameCelsius).SelectMany(c => c.Date).Where(date => date >= startDate && date <= finalDate).ToArray();
-                float[] closeCelsius = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameCelsius).SelectMany(crypto => crypto.Close).Where((_, index) => index < datesCelsius.Length).ToArray();
-
-                var Celsius = formsPlot1.Plot.Add.ScatterLine(datesCelsius, closeCelsius);
-                Celsius.LegendText = "Celsius";
-                Celsius.Color = Colors.Aqua;
-
-                Currency currencyCelsius = allCryptoData.First(crypto => crypto.CryptoName == cryptoNameCelsius).Currency.First();
-                formsPlot1.Plot.YLabel(currencyCelsius.ToString());
-            }
-            else
-            {
-                UpdatePlot(null, null);
-                //CryptoDataReader readerCelsius = new CryptoDataReader(filePathCelsius);
-                //List<Crypto> dataCelsius = readerCelsius.LoadData();
-
-                //DateTime[] datesCelsius = dataCelsius.Select(d => d.Date).ToArray();
-                //double[] closeCelsius = dataCelsius.Select(d => d.Close).ToArray();
-                //var Celsius = formsPlot1.Plot.Remove.ScatterLine(datesCelsius, closeCelsius);
-            }
+            UpdatePlot(null, null);
         }
 
         private void BitTorrent_CheckedChanged(object sender, EventArgs e)
         {
-            if (BitTorrent.Checked)
-            {
-                DateTime startDate = allCryptoData.Min(d => d.Date.Min());
-                DateTime finalDate = allCryptoData.Max(d => d.Date.Max());
-
-                DateTime[] datesBitTorrent = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameBitTorrent).SelectMany(c => c.Date).Where(date => date >= startDate && date <= finalDate).ToArray();
-                float[] closeBitTorrent = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameBitTorrent).SelectMany(crypto => crypto.Close).Where((_, index) => index < datesBitTorrent.Length).ToArray();
-
-                var Low = formsPlot1.Plot.Add.ScatterLine(datesBitTorrent, closeBitTorrent);
-                Low.Color = Colors.Yellow;
-                Low.LegendText = "BitTorrent";
-
-                Currency currencyBitTorrent = allCryptoData.First(crypto => crypto.CryptoName == cryptoNameBitTorrent).Currency.First();
-
-                formsPlot1.Plot.YLabel(currencyBitTorrent.ToString());
-            }
-            else
-            {
-                UpdatePlot(null, null);
-            }
+            UpdatePlot(null, null);
         }
     }
 }
 
-/*
-void Reset
- */
+//Test remove not functinal
+/*Func<IPlottable, bool> lambda = f => f.Axes == Fantom.Axes;
+  formsPlot1.Plot.Remove(lambda);*/
