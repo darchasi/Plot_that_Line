@@ -8,7 +8,8 @@ namespace Plot_that_line
     {
         //Get data Cryptos
         public static CryptoDataReader reader = new CryptoDataReader();
-        List<Crypto> allCryptoData = reader.LoadData();
+        public List<Crypto> allCryptoData = reader.LoadData();
+
 
         //Cryptos used
         public static string cryptoNameFantom = "Fantom";
@@ -32,17 +33,17 @@ namespace Plot_that_line
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void formsPlot1_Load(object sender, EventArgs e)
+        public void formsPlot1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void UpdatePlot(DateTime? startDate, DateTime? finalDate)
+        public void UpdatePlot(DateTime? startDate, DateTime? finalDate)
         {
             formsPlot1.Plot.Clear();
             //If no chosen dates, it takes all the dates
@@ -105,17 +106,17 @@ namespace Plot_that_line
         }
 
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        public void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void dateTimePickerFinal_ValueChanged(object sender, EventArgs e)
+        public void dateTimePickerFinal_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
             DateTime StartDate = dateTimePickerStart.Value.Date;
             DateTime FinalDate = dateTimePickerFinal.Value.Date;
@@ -135,7 +136,7 @@ namespace Plot_that_line
             UpdatePlot(StartDate, FinalDate);
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        public void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
 
             DateTime lastDate = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).Max(d => d.Date.Max());
@@ -153,7 +154,7 @@ namespace Plot_that_line
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        public void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
             DateTime lastDate = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).Max(d => d.Date.Max());
@@ -171,7 +172,7 @@ namespace Plot_that_line
             }
         }
 
-        private void LastDay_CheckedChanged(object sender, EventArgs e)
+        public void LastDay_CheckedChanged(object sender, EventArgs e)
         {
             DateTime lastDate = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).Max(d => d.Date.Max());
             DateTime oneweekAgo = lastDate.AddDays(-7);
@@ -193,7 +194,7 @@ namespace Plot_that_line
             UpdatePlot(null, null);
         }
 
-        private void Celsius_CheckedChanged(object sender, EventArgs e)
+        public void Celsius_CheckedChanged(object sender, EventArgs e)
         {
             UpdatePlot(null, null);
         }

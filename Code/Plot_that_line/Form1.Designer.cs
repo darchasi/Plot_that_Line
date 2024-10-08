@@ -169,15 +169,15 @@
 
         #endregion
 
-        private ScottPlot.WinForms.FormsPlot formsPlot1;
-        private DateTimePicker dateTimePickerStart;
+        public ScottPlot.WinForms.FormsPlot formsPlot1;
+        public DateTimePicker dateTimePickerStart;
         public DateTimePicker dateTimePickerFinal;
-        private Button button2;
-        private CheckBox LastYear;
-        private CheckBox LastMonth;
-        private CheckBox LastWeek;
-        private CheckBox Fantom;
-        private CheckBox Celsius;
-        private CheckBox BitTorrent;
+        public Button button2;
+        public CheckBox LastYear;
+        public CheckBox LastMonth;
+        public CheckBox LastWeek;
+        public CheckBox Fantom;
+        public CheckBox Celsius;
+        public CheckBox BitTorrent;
     }
 }

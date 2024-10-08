@@ -33,14 +33,14 @@ namespace Plot_that_line
 }
 public enum Currency
 {
-    USD, // Dolar
-    EUR, // Euro
-    GBP, // Pound sterling
-    JPY, // Yen
-    CAD  // Canadian dolars
+    USD, //Dolar
+    EUR, //Euro
+    GBP, //Pound sterling
+    JPY, //Yen
+    CAD  //Canadian dolars
 }
 
-static class CurrencyConverter
+public static class CurrencyConverter
 {
     public static Currency fromString(string currency)
     {
