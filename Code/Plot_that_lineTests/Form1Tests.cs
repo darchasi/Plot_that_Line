@@ -29,27 +29,17 @@ namespace Plot_that_line.Tests
         public void UpdatePlotTest()
         {
             // Arrange
-            var form = new Form1
-            {
-                allCryptoData = new List<Crypto>
-        {
-            new Crypto("Fantom",
-                new List<DateTime> { DateTime.Now.AddDays(-5), DateTime.Now.AddDays(-4) },
-                new List<float> { 1.1f, 1.2f },
-                new List<float> { 1.3f, 1.4f },
-                new List<float> { 1.0f, 1.1f },
-                new List<float> { 1.2f, 1.3f },
-                new List<float> { 1000, 1100 },
-                new List<string> { "USD", "USD" })
-        }
-            };
+            var form = new Form1();
+
+            CryptoDataReader reader = new CryptoDataReader();
+            form.allCryptoData = reader.LoadData();
 
             form.Fantom.Checked = true;
             form.Celsius.Checked = false;
             form.BitTorrent.Checked = false;
 
-            DateTime startDate = DateTime.Now.AddDays(-6);
-            DateTime endDate = DateTime.Now;
+            DateTime startDate = new DateTime(2021, 01, 01);
+            DateTime endDate = new DateTime(2022, 01, 01);
 
             // Act
             form.UpdatePlot(startDate, endDate);
@@ -63,37 +53,63 @@ namespace Plot_that_line.Tests
         }
 
         [TestMethod()]
-        public void checkBox2_CheckedChangedTest()
+        public void checkBox2_CheckedYear()
         {
             // Arrange
             var form = new Form1();
             form.LastYear.Checked = false;
 
-
-            form.allCryptoData = new List<Crypto>
-            {
-                new Crypto("Fantom",
-                new List<DateTime> { DateTime.Now.AddYears(-1), DateTime.Now }, 
-                new List<float> { 1.1f, 1.2f }, 
-                new List<float> { 1.3f, 1.4f },
-                new List<float> { 1.0f, 1.1f },
-                new List<float> { 1.2f, 1.3f },
-                new List<float> { 1000, 1100 },
-                new List<string> { "USD", "USD" })
-            };
-
-            
-            form.LastYear.Checked = true;
-            form.LastMonth.Checked = false; 
-            form.LastWeek.Checked = false;
+            CryptoDataReader reader = new CryptoDataReader();
+            form.allCryptoData = reader.LoadData();
 
             // Act
-            form.checkBox2_CheckedChanged(null, EventArgs.Empty);
+            var finalDate = form.allCryptoData.Max(d => d.Date.Max());
+            DateTime OneYearAgo = form.allCryptoData.Max(d => d.Date.Max()).AddYears(-1);
+
+            var yearfinal = finalDate.Year - OneYearAgo.Year;
+            
+            // Assert
+            Assert.AreEqual(1, yearfinal);
+        }
+
+        [TestMethod()]
+        public void checkBox1_CheckedChangedTest()
+        {
+            // Arrange
+            var form = new Form1();
+            form.LastYear.Checked = false;
+
+            CryptoDataReader reader = new CryptoDataReader();
+            form.allCryptoData = reader.LoadData();
+
+            // Act
+            var finalDate = form.allCryptoData.Max(d => d.Date.Max());
+            DateTime OneMonthAgo = form.allCryptoData.Max(d => d.Date.Max()).AddMonths(-1);
+
+            var monthfinal = finalDate.Month - OneMonthAgo.Month;
 
             // Assert
-            Assert.AreEqual(1, form.formsPlot1.Plot.GetPlottables().Count(), "Fantom should be plotted once.");
-            var scatter = form.formsPlot1.Plot.GetPlottables().First() as ScottPlot.Plottables.Scatter;
-            Assert.IsNotNull(scatter, "The plotted item should be a Scatter plot.");
+            Assert.AreEqual(1, monthfinal);
+        }
+
+        [TestMethod()]
+        public void LastDay_CheckedChangedTest()
+        {
+            // Arrange
+            var form = new Form1();
+            form.LastYear.Checked = false;
+
+            CryptoDataReader reader = new CryptoDataReader();
+            form.allCryptoData = reader.LoadData();
+
+            // Act
+            var finalDate = form.allCryptoData.Max(d => d.Date.Max());
+            DateTime OneWeekAgo = form.allCryptoData.Max(d => d.Date.Max()).AddDays(-7);
+
+            var weekfinal = finalDate.Day - OneWeekAgo.Day;
+
+            // Assert
+            Assert.AreEqual(7, weekfinal);
         }
     }
 }

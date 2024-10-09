@@ -87,6 +87,7 @@ public class CryptoDataReader
                 using (StreamReader sr = new StreamReader(aFile))
                 {
                     string line;
+
                     while ((line = sr.ReadLine()) != null)
                     {
                         string[] values = line.Split(',');

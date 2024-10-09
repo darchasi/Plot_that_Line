@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\Plot_that_lineTests.csproj": {}
+    "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\Plot_that_lineTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\Plot_that_lineTests.csproj": {
+    "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\Plot_that_lineTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\Plot_that_lineTests.csproj",
+        "projectUniqueName": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\Plot_that_lineTests.csproj",
         "projectName": "Plot_that_lineTests",
-        "projectPath": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\Plot_that_lineTests.csproj",
-        "packagesPath": "C:\\Users\\dehad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\obj\\",
+        "projectPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\Plot_that_lineTests.csproj",
+        "packagesPath": "C:\\Users\\pv20qck\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_lineTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dehad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pv20qck\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,14 +27,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj": {
-                "projectPath": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj"
+              "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj": {
+                "projectPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj"
               }
             }
           }
@@ -90,20 +92,21 @@
         }
       }
     },
-    "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj": {
+    "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
+        "projectUniqueName": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
         "projectName": "Plot_that_line",
-        "projectPath": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
-        "packagesPath": "C:\\Users\\dehad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dehad\\Desktop\\Dario\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\obj\\",
+        "projectPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\Plot_that_line.csproj",
+        "packagesPath": "C:\\Users\\pv20qck\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pv20qck\\Desktop\\Plot\\Plot_that_Line\\Code\\Plot_that_line\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dehad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pv20qck\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -112,6 +115,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

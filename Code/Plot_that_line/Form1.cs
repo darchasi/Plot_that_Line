@@ -69,6 +69,10 @@ namespace Plot_that_line
                 ScottPlot.Plottables.Scatter Fantom = formsPlot1.Plot.Add.ScatterLine(datesFantom, closeFantom);
                 Fantom.Color = Colors.Black;
                 Fantom.LegendText = cryptoNameFantom;
+                Currency currencyFantom = allCryptoData.Where(crypto => crypto.CryptoName == cryptoNameFantom).Select(c => c.Currency.First()).First();
+
+                formsPlot1.Plot.YLabel(currencyFantom.ToString());
+
             }
             //if Celsius checked it draws it
             if (this.Celsius.Checked) {
